@@ -1,0 +1,50 @@
+<p> Hello, World! </p>
+<% if @users.blank? %>
+	<p> blank </p>
+<% else %>
+	<h2> Users </h2>
+	<% for user in @users %>
+		<tr>
+			<p></p>
+			<td>Name: <%= user.name %> </td>
+			<p></p>
+			<td>Email: <%= user.email %> </td>
+			<p></p>
+			<td>Age: <%= user.age %> </td>
+			<p></p>
+		</tr>
+	<% end %>
+<% end %>
+
+<h2> Todo List </h2>
+<h3> Done. </h3>
+	<% index = 1 %>
+	<% for todo in @todos %>
+		<% if todo.finished %>
+			<tr>
+				<p></p>
+				<td><%= index %>: <%= todo.name %> </td>
+				<p></p>
+			</tr>
+			<% index = index + 1 %>
+		<% end %>
+	<% end %>
+<h3> Not done. </h3>
+	<% index = 1 %>
+	<% for todo in @todos %>
+		<% if not todo.finished %>
+			<tr>
+				<p></p>
+				<td><%= index %>: <%= todo.name %> </td>
+				<p></p>
+			</tr>
+		<% end %>
+	<% end %>
+
+<h2> Check out our cat! </h2>
+	<% for cat in @cats %>
+		<tr>
+			<p></p>
+			<td>His name is <%= cat.name %>!</td>
+		</tr>
+	<% end %>
